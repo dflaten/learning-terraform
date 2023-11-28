@@ -1,7 +1,7 @@
 # learning-terraform
 Examples and code to help with learning Terraform.
 
-# Setting up
+## Setting up
 1. Make sure you have `terraform` installed on your device. Brew has it: 
 `brew install terraform`
 2. If needed, run `terraform init` to initialize the dependency lock file.
@@ -47,5 +47,18 @@ Terraform will perform the following actions:
 
 Plan: 1 to add, 0 to change, 0 to destroy.
 ```
-5. Now run `terraform_apply` to create your resources.
+5. Now run `terraform apply` to create your resources.
+
+## About files included
+* `main.tf` - This is the file where the actual infrastructure is defined.
+
+* The `.terraform.lock.hcl` file includes what version of the provider was used
+when the terraform file was created via `terraform init`. As providers APIs can
+change and the terraform template could then become unsable this gives us a way
+to make sure it does work until we are ready to upgrade the version for the
+provider. Alternatively the version of the provider can be defined in the
+terraform template. 
+
+
+
 
